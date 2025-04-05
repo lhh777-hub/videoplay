@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="search-container">
+        <form method="POST" action="{{ url_for('index') }}">
+            {{ search_form.hidden_tag() }}
+            <div class="form-group">
+                {{ search_form.query(class="form-control", placeholder="搜索视频...") }}
+                {{ search_form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+    
+    <div class="video-list">
+        {% if videos %}
+            <h2>视频列表</h2>
+            <ul>
+                {% for video in videos %}
+                    <li class="video-item">
+                        <a href="{{ url_for('play', video_id=video.id) }}">{{ video.title }}</a>
+                        <div class="video-actions">
+                            <a href="{{ url_for('rename', video_id=video.id) }}" class="btn btn-edit">重命名</a>
+                            <form method="POST" action="{{ url_for('delete', video_id=video.id) }}" onsubmit="return confirm('确定要删除这个视频吗？');">
+                                <button type="submit" class="btn btn-delete">删除</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>没有找到视频。</p>
+        {% endif %}
+    </div>
+{% endblock %}

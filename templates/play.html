@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>正在播放: {{ video_title }}</h2>
+    <div class="video-player">
+        <video controls autoplay width="100%">
+            <source src="{{ video_url }}" type="video/mp4">
+            您的浏览器不支持HTML5视频。
+        </video>
+    </div>
+    <div class="back-link">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">返回列表</a>
+    </div>
+{% endblock %}

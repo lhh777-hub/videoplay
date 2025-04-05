@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>重命名视频</h2>
+    <p>原文件名: {{ video.filename }}</p>
+    <form method="POST" action="{{ url_for('rename', video_id=video.id) }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.new_title.label }}
+            {{ form.new_title(class="form-control") }}
+            {% if form.new_title.errors %}
+                <div class="errors">
+                    {% for error in form.new_title.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">取消</a>
+        </div>
+    </form>
+{% endblock %}

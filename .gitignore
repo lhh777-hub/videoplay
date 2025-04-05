@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Database
+*.sqlite
+
+# Environment
+.env
+
+# Uploads (保留空目录结构)
+static/videos/*
+!static/videos/.gitkeep
+
+# IDE
+.idea/
