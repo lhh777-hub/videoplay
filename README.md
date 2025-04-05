@@ -14,24 +14,13 @@ VideoPlay 是一个基于 Flask 框架的视频点播网站，实现了视频上
 
 ## 3. 项目结构
 
-videoplay/
-├── app.py
-├── static/
-│ ├── videos/
-│ └── css/style.css
-├── templates/
-│ ├── base.html
-│ ├── index.html
-│ ├── upload.html
-│ ├── rename.html
-│ └── play.html
-└── requirements.txt
+
 
 ## 4. 核心功能实现
 
 ### 4.1 功能一：视频上传（增）
 
-增的功能主要体现在视频上传上，用户可以在网页中上传自己本地存储的视频，让deepseek生成一个实现视频上传的函数：
+增的功能主要体现在视频上传上，用户可以在网页中上传自己本地存储的视频。
 
 **实现逻辑:**
 
@@ -76,15 +65,14 @@ videoplay/
 本项目基于flask2.3.2后端架构进行开发，前端使用Jinja2模版，主要开发语言是 Python，因此需要使用一些库。
 
 `requirements.txt` 中已经给出了需要下载的依赖和库：
--flask==2.3.2
--Werkzeug==2.3.7
--Flask-WTF==1.2.1
--Flask-SQLAlchemy==3.0.2
--WTForms==3.0.1
--python-dotenv==0.19.0
+- flask==2.3.2
+- Werkzeug==2.3.7
+- Flask-WTF==1.2.1
+- Flask-SQLAlchemy==3.0.2
+- WTForms==3.0.1
+- python-dotenv==0.19.0
 
 > **注意**：不推荐使用 flask 2.2x 的版本搭配 Werkzeug ≥ 2.2.2，因为在 flask2.2x版本中存在不兼容的问题：
-> ![项目截图](C:\Users\15879\Desktop\图片1.png)
 
 因此使用 flask 2.3.2 会更稳定。
 
