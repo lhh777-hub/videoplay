@@ -86,7 +86,7 @@ VideoPlay 是一个基于 Flask 框架的视频点播网站，实现了视频上
 
 ### 6.2 部署运行
 
-终端powershell中输入：
+首先需要激活python虚拟环境，终端powershell中输入：
 ```
 .\venv\Scripts\Activate.ps1
 ```
@@ -94,8 +94,8 @@ VideoPlay 是一个基于 Flask 框架的视频点播网站，实现了视频上
 ```
 python -c "from app import app, db; with app.app_context(): db.create_all()"
 ```
-输入：
+最后输入指令即可运行：
 ```
 flask run
 ```
-即可运行
+
